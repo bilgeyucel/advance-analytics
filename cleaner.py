@@ -198,6 +198,7 @@ def getNormalizedDates(dates):
 
 if __name__ == '__main__':
     df = pd.read_csv('data/train_month_3_with_target.csv')
+    # df = pd.read_csv('data/train_month_2.csv')
 
     # USE BELOW LINE TO PROCESS THE TEST DATA, DONT FORGET TO CHANGE THE OUTPUT FILE BELOW
     # df = pd.read_csv('data/test_month_3.csv')
@@ -300,11 +301,14 @@ if __name__ == '__main__':
         'customer_occupation_code_0': getNormalizedOccupations(df['customer_occupation_code']),
         'customer_self_employed': df['customer_self_employed'],
         # COMMENT OUT THE BELOW LINE TO PROCESS THE TEST DATA
-        'target': df['target'],
+        # 'target': df['target']
+
     })
 
     newDf.to_csv('out/cleanedDataClassOccupation.csv',
                  sep=',', encoding='utf-8', index=False)
+    # newDf.to_csv('out/cleaned_Train_2.csv',
+    #              sep=',', encoding='utf-8', index=False)
     # USE BELOW TO PROCESS THE TEST DATA
     # newDf.to_csv('out/cleanedDataNoClassOccupation.csv',
     #              sep=',', encoding='utf-8', index=False)
